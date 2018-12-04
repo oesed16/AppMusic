@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Real Music</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Artistas <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mi música</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Mi cuenta </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Login in</a>
+                <a class="dropdown-item" href="#">Logout</a>
+                <a class="dropdown-item" href="#">Sign up</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h2><%= @artist.name %></h2>
+      <h3> Albums (<%= @albums.count %>)</h3>
+      <div class="row m-2">
+        <% @albums.each do |album| %>
+          <div class="col-4 m-2">
+            <div class="card" style="width: 15rem;">
+              <img class="card-img-top" src="<%= album.image_url %>" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title text-left" style="font-size: 15px;"><%= album.name %></h5>
+                <h5 class="card-title text-left" style="font-size: 15px;"><%= album.released_at.year %></h5>
+              </div>
+            </div>
+          </div>
+        <% end %>  
+      </div>  
+    </div>
+    <div class="col-2 m-3">
+      <img class="card" style="width: 20rem;" src="<%= @artist.image_url %>">
+    </div>  
+  </div>
+</div>
