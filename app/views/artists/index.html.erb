@@ -38,7 +38,7 @@
           <img class="card-img-top" src="<%= artist.image_url %>" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title text-center"><%= artist.name %></h5>
-            <%= link_to "Ver más", artist_path(artist), class: "btn btn-primary btn-lg btn-block" %>
+            <%= link_to "Ver más", artist_path(artist.id), class: "btn btn-primary btn-lg btn-block" %>
           </div>
         </div>
       </div>
