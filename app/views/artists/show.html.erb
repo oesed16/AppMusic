@@ -34,15 +34,15 @@
   <div class="row">
     <div class="col-8">
       <h2><%= @artist.name %></h2>
-      <h3> Albums (<%= @albums.count %>)</h3>
+      <h3> Albums (<%= @artist.albums.count %>)</h3>
       <div class="row m-2">
-        <% @albums.each do |album| %>
+        <% @artist.albums.each do |album| %>
           <div class="col-4 m-2">
             <div class="card" style="width: 15rem;">
               <img class="card-img-top" src="<%= album.image_url %>" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title text-left" style="font-size: 15px;"><%= album.name %></h5>
-                <h5 class="card-title text-left" style="font-size: 15px;"><%= album.released_at %></h5>
+                <h5 class="card-title text-left" style="font-size: 15px;"><%= l album.released_at, format: '%Y' if album.released_at %></h5>
               </div>
             </div>
           </div>
