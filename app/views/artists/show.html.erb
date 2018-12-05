@@ -42,7 +42,9 @@
               <img class="card-img-top" src="<%= album.image_url %>" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title text-left" style="font-size: 15px;"><%= album.name %></h5>
+                <% unless @albums.empty? %>
                 <h5 class="card-title text-left" style="font-size: 15px;"><%= album.released_at.year %></h5>
+              <% end %>
               </div>
             </div>
           </div>
